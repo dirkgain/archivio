@@ -16,7 +16,7 @@ public class Model {
        try {
          String driver = "com.mysql.jdbc.Driver";
          Class.forName(driver).newInstance();
-         String url = "jdbc:mysql://localhost:8089/archivio_sp";
+         String url = "jdbc:mysql://localhost:3306/archivio_sp";
          Connection conn = DriverManager.getConnection(url,"root","");
          System.out.println("Connessione stabilita");
          Statement cmd = conn.createStatement();
