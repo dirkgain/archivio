@@ -3,12 +3,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Archivio Studio Project</title>
     </h:head>
-    <h:body>
-        Hello from Facelets
+    <h:body style="text-align: center">
+        <h:outputLabel>  Benvenuto nell'Archivio Studio Project </h:outputLabel>
+        <br /> 
+        <h:outputLabel>  Effettua il Login </h:outputLabel>
         <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+        <h:form>
+            
+            <h:outputLabel>Username: </h:outputLabel>
+            <h:inputText id='username' value="#{indexBean.username}" required="true" requiredMessage="Username obbligatoria"> </h:inputText>
+            <h:message for="username" /> 
+            <br />
+            <h:outputLabel>Password: </h:outputLabel>
+            <h:inputSecret id='password' value="#{indexBean.password}" required="true" requiredMessage="Password obbligatoria" > </h:inputSecret>
+            <h:message for="password" /> 
+            <br />
+            <h:commandButton value="Login" action="#{indexBean.doLogin}" />
+        </h:form>
+        
+   
+        
     </h:body>
 </html>
 
