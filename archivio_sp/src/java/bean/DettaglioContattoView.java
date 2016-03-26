@@ -18,8 +18,8 @@ import model.Contatto;
  */
 
 @ManagedBean(name = "dettaglioContatto")
-//@RequestScoped
-@SessionScoped
+@RequestScoped
+//@SessionScoped
 public class DettaglioContattoView {
     
     Contatto contatto;

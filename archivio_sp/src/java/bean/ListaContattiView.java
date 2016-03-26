@@ -26,8 +26,8 @@ import model.Utente;
  */
 
 @ManagedBean
-//@RequestScoped
-@SessionScoped
+@RequestScoped
+//@SessionScoped
 public class ListaContattiView implements Serializable{
    private List <CurrentUserBean> utenti; 
 

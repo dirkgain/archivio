@@ -25,7 +25,7 @@ public class Contatto {
  String cellulare;
  String email;
  String professione;
- String sedeDiLavoro;
+ String sedeDiServizio;
  String materia;
  String note;
  
@@ -36,7 +36,7 @@ public class Contatto {
     public Contatto() {
     }
 
-    public Contatto(int id, String nome, String cognome, Date dataDiNascita, String comuneDiResidenza, String indirizzo, String cap, String provincia, String telefono, String cellulare, String email, String professione, String sedeDiLavoro, String materia, String note, TitoloDiStudio titoloDiStudio, ArrayList<RapportoDiLavoro> rapportiDiLavoro) {
+    public Contatto(int id, String nome, String cognome, Date dataDiNascita, String comuneDiResidenza, String indirizzo, String cap, String provincia, String telefono, String cellulare, String email, String professione, String sedeDiServizio, String materia, String note, TitoloDiStudio titoloDiStudio, ArrayList<RapportoDiLavoro> rapportiDiLavoro) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
@@ -49,7 +49,7 @@ public class Contatto {
         this.cellulare = cellulare;
         this.email = email;
         this.professione = professione;
-        this.sedeDiLavoro = sedeDiLavoro;
+        this.sedeDiServizio = sedeDiServizio;
         this.materia = materia;
         this.note = note;
         this.titoloDiStudio = titoloDiStudio;
@@ -107,6 +107,94 @@ public class Contatto {
 
     public void setCellulare(String cellulare) {
         this.cellulare = cellulare;
+    }
+
+    public Date getDataDiNascita() {
+        return dataDiNascita;
+    }
+
+    public void setDataDiNascita(Date dataDiNascita) {
+        this.dataDiNascita = dataDiNascita;
+    }
+
+    public String getComuneDiResidenza() {
+        return comuneDiResidenza;
+    }
+
+    public void setComuneDiResidenza(String comuneDiResidenza) {
+        this.comuneDiResidenza = comuneDiResidenza;
+    }
+
+    public String getCap() {
+        return cap;
+    }
+
+    public void setCap(String cap) {
+        this.cap = cap;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getProfessione() {
+        return professione;
+    }
+
+    public void setProfessione(String professione) {
+        this.professione = professione;
+    }
+
+    public String getSedeDiServizio() {
+        return sedeDiServizio;
+    }
+
+    public void setSedeDiServizio(String sedeDiServizio) {
+        this.sedeDiServizio = sedeDiServizio;
+    }
+
+    public String getMateria() {
+        return materia;
+    }
+
+    public void setMateria(String materia) {
+        this.materia = materia;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public TitoloDiStudio getTitoloDiStudio() {
+        return titoloDiStudio;
+    }
+
+    public void setTitoloDiStudio(TitoloDiStudio titoloDiStudio) {
+        this.titoloDiStudio = titoloDiStudio;
+    }
+
+    public ArrayList<RapportoDiLavoro> getRapportiDiLavoro() {
+        return rapportiDiLavoro;
+    }
+
+    public void setRapportiDiLavoro(ArrayList<RapportoDiLavoro> rapportiDiLavoro) {
+        this.rapportiDiLavoro = rapportiDiLavoro;
     }
  
  
