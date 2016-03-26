@@ -25,6 +25,12 @@
               <p:column headerText="Email">
                      <h:outputText value="#{contatto.email}" />
               </p:column>
+            
+               <p:column headerText="Azioni">
+                   <h:commandButton id="modifica" value="Modifica" action="#{ListaContattiView.editSelezionato(contatto.id)}" />
+              </p:column>
+            
+                          
         </p:dataTable>
         
     </h:body>

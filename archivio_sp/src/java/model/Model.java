@@ -56,7 +56,7 @@ public class Model {
     
     
     
-    public static List<Utente> restituisciUtenti () throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{
+    public  List<Utente> restituisciUtenti () throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{
   
         
        // try {
@@ -85,7 +85,7 @@ public class Model {
 
     
     
-     public static List<ContattoRow> restituisciContattiRow (){
+     public  List<ContattoRow> restituisciContattiRow (){
   
         Connection conn = null;
         List <ContattoRow> contatti = null;
@@ -121,6 +121,40 @@ public class Model {
 }
     
     
+    public  Contatto restituisciContatto (int id){
+  
+        Connection conn = null;
+        Contatto contatto = null;
+        
+    try{
+         String driver = "com.mysql.jdbc.Driver";
+         Class.forName(driver).newInstance();
+         String url = "jdbc:mysql://localhost:3306/archivio_sp";
+         conn = DriverManager.getConnection(url,"root","");
+ 
+         System.out.println("Connessione stabilita");
+         Statement cmd = conn.createStatement();
+ 
+         String qry = "SELECT * FROM contatti WHERE id="+id;
+         ResultSet res = cmd.executeQuery(qry);
     
+         
+         //System.out.println("sto qui"); 
+         
+        
+        while (res.next()) {
+            contatto = new Contatto (id, res.getString("nome"), res.getString("congome"), (java.util.Date)res.getTimestamp("data_di_nascita"), res.getString("comuneDiResidenza"),res.getString("indirizzo"), res.getString("cap"), res.getString("provincia"), res.getString("telefono"), res.getString("cellulare"), res.getString("email"), res.getString("professione"), res.getString("sedeDiLavoro"), res.getString("materia"), res.getString("note"), null, null);
+                    }
+     conn.close();
+    }
+    catch (Exception e) {
+        System.out.println(e.toString()); 
+    }
+    
+         return contatto;
+        
+       
+    
+}
 
 }

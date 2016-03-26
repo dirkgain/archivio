@@ -13,6 +13,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import model.Contatto;
 import model.ContattoRow;
 import model.Model;
 import model.Utente;
@@ -26,10 +27,21 @@ import model.Utente;
 @ViewScoped
 public class ListaContattiView implements Serializable{
    private List <CurrentUserBean> utenti; 
-  // CurrentUserBean utente;
+
    @ManagedProperty("#{model}")
    private Model model;
+   
+   @ManagedProperty("#{dettaglioContatto}")
+   private DettaglioContattoView dettaglioContatto;
 
+    public void setModel(Model model) {
+        this.model = model;
+    }
+   
+      public void setDettaglioContatto(DettaglioContattoView dettaglioContatto) {
+        this.dettaglioContatto = dettaglioContatto;
+    }
+    
     public ListaContattiView() {
     }
    
@@ -45,5 +57,15 @@ public class ListaContattiView implements Serializable{
     public List<ContattoRow> getContatti(){
       return model.restituisciContattiRow();
     }
+    
+    public String editSelezionato (int id){
+        
+        Contatto contatto = model.restituisciContatto(id);
+        
+        dettaglioContatto.setContatto(contatto);
+        
+        return "dettaglioContatto";
+    }
+    
     
 }
