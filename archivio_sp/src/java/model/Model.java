@@ -143,7 +143,7 @@ public class Model {
          
         
         while (res.next()) {
-            contatto = new Contatto (id, res.getString("nome"), res.getString("congome"), (java.util.Date)res.getTimestamp("data_di_nascita"), res.getString("comuneDiResidenza"),res.getString("indirizzo"), res.getString("cap"), res.getString("provincia"), res.getString("telefono"), res.getString("cellulare"), res.getString("email"), res.getString("professione"), res.getString("sedeDiLavoro"), res.getString("materia"), res.getString("note"), null, null);
+            contatto = new Contatto (id, res.getString("nome"), res.getString("cognome"), (java.util.Date)res.getTimestamp("data_di_nascita"), res.getString("comune_di_residenza"),res.getString("indirizzo"), res.getString("cap"), res.getString("provincia"), res.getString("telefono"), res.getString("cellulare"), res.getString("email"), res.getString("professione"), res.getString("sede_di_servizio"), res.getString("materia"), res.getString("note"), null, null);
                     }
      conn.close();
     }

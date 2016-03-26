@@ -12,6 +12,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import model.Contatto;
 import model.ContattoRow;
@@ -24,7 +26,8 @@ import model.Utente;
  */
 
 @ManagedBean
-@ViewScoped
+//@RequestScoped
+@SessionScoped
 public class ListaContattiView implements Serializable{
    private List <CurrentUserBean> utenti; 
 
@@ -63,7 +66,7 @@ public class ListaContattiView implements Serializable{
         Contatto contatto = model.restituisciContatto(id);
         
         dettaglioContatto.setContatto(contatto);
-        
+                  
         return "dettaglioContatto";
     }
     

@@ -7,8 +7,8 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h1 align="center">Lista degli utenti</h1>
-        
+        <h1 align="center">Lista dei contatti</h1>
+        <h:form>
         <p:dataTable var="contatto" value="#{listaContattiView.contatti}">
               <p:column headerText="Nome">
                    <h:outputText value="#{contatto.nome}" />
@@ -27,11 +27,16 @@
               </p:column>
             
                <p:column headerText="Azioni">
-                   <h:commandButton id="modifica" value="Modifica" action="#{ListaContattiView.editSelezionato(contatto.id)}" />
+                   <p:commandButton id="modifica" value="Modifica" action="#{listaContattiView.editSelezionato(1)}" />
               </p:column>
             
-                          
+                      
         </p:dataTable>
+            <h:commandButton value="Login" action="index" />
+            </h:form>
+       
+        
+    
         
     </h:body>
 </html>

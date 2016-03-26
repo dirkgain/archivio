@@ -5,8 +5,11 @@
  */
 package bean;
 
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import model.Contatto;
 
 /**
@@ -15,7 +18,8 @@ import model.Contatto;
  */
 
 @ManagedBean(name = "dettaglioContatto")
-@RequestScoped
+//@RequestScoped
+@SessionScoped
 public class DettaglioContattoView {
     
     Contatto contatto;
