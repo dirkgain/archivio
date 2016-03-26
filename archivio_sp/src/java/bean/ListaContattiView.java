@@ -11,8 +11,11 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import model.ContattoRow;
 import model.Model;
+import model.Utente;
 
 /**
  *
@@ -22,29 +25,25 @@ import model.Model;
 @ManagedBean
 @ViewScoped
 public class ListaContattiView implements Serializable{
-   private List <UtenteBean> utenti; 
-   UtenteBean utente;
-   ResultSet resUtente;
-   Model modello;
+   private List <CurrentUserBean> utenti; 
+  // CurrentUserBean utente;
+   @ManagedProperty("#{model}")
+   private Model model;
 
     public ListaContattiView() {
     }
    
-    /**
-     *
-     * @throws InstantiationException
-     * @throws IllegalAccessException
-     * @throws ClassNotFoundException
-     * @throws SQLException
-     */
-   
-   
+    
    
     //@PostConstruct
     public void init() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException 
     {
-        resUtente = Model.restituisciUtenti();
-        utente.nome=resUtente.getString("nome");
-        
+             
     }
+    
+    
+    public List<ContattoRow> getContatti(){
+      return model.restituisciContattiRow();
+    }
+    
 }

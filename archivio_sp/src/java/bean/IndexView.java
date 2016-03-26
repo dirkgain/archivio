@@ -48,10 +48,10 @@ public class IndexView implements Serializable {
         
         if (Model.checkLogin(username,password)) 
         {
-            UtenteBean utenteBean= new UtenteBean(username,"test",true);
+            CurrentUserBean utenteBean= new CurrentUserBean(username,"test",true);
             FacesContext context = FacesContext.getCurrentInstance();
             context.getExternalContext().getSessionMap().put("utenteBean", utenteBean);
-            return "elencoContatti";
+            return "listaContatti";
         }
         
         

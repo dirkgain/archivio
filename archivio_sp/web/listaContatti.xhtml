@@ -9,23 +9,21 @@
     <h:body>
         <h1 align="center">Lista degli utenti</h1>
         
-        <p:dataTable var="utente" value="#{listaContattiView.init(
-                                           
-                                           )}">
+        <p:dataTable var="contatto" value="#{listaContattiView.contatti}">
               <p:column headerText="Nome">
-                   <h:outputText value="#{utente.nome}" />
+                   <h:outputText value="#{contatto.nome}" />
                </p:column>
  
               <p:column headerText="Cognome">
-                  <h:outputText value="#{utenteBean.nome}" />
+                  <h:outputText value="#{contatto.cognome}" />
               </p:column>
  
               <p:column headerText="Cellulare">
-                     <h:outputText value="#{utente.cellulare}" />
+                     <h:outputText value="#{contatto.cellulare}" />
               </p:column>
  
               <p:column headerText="Email">
-                     <h:outputText value="#{utente.email}" />
+                     <h:outputText value="#{contatto.email}" />
               </p:column>
         </p:dataTable>
         
