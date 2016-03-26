@@ -13,14 +13,14 @@
         <h:form>
             
             <h:outputLabel>Username: </h:outputLabel>
-            <h:inputText id='username' value="#{indexBean.username}" required="true" requiredMessage="Username obbligatoria"> </h:inputText>
+            <h:inputText id='username' value="#{indexView.username}" required="true" requiredMessage="Username obbligatoria"> </h:inputText>
             <h:message for="username" /> 
             <br />
             <h:outputLabel>Password: </h:outputLabel>
-            <h:inputSecret id='password' value="#{indexBean.password}" required="true" requiredMessage="Password obbligatoria" > </h:inputSecret>
+            <h:inputSecret id='password' value="#{indexView.password}" required="true" requiredMessage="Password obbligatoria" > </h:inputSecret>
             <h:message for="password" /> 
             <br />
-            <h:commandButton value="Login" action="#{indexBean.doLogin}" />
+            <h:commandButton value="Login" action="#{indexView.doLogin}" />
         </h:form>
         
    

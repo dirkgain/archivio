@@ -19,12 +19,12 @@ import model.Model;
 
 @ManagedBean
 @RequestScoped
-public class IndexBean implements Serializable {
+public class IndexView implements Serializable {
     
     String username;
     String password;
 
-    public IndexBean() {
+    public IndexView() {
     }
     
     
