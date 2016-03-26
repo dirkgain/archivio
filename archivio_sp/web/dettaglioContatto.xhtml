@@ -19,10 +19,7 @@
                     <p:inputText value="#{dettaglioContatto.contatto.cognome}" />
                 </p:inplace>
                 
-                <h:outputLabel for="dataDiNascita" value="Data di nascita:" />
-                <p:inplace id="dataDiNascita">
-                    <p:inputText value="#{dettaglioContatto.contatto.dataDiNascita}" />
-                </p:inplace>
+               
                 
                 <h:outputLabel for="comuneDiResidenza" value="Comune di Residenza:" />
                 <p:inplace id="comuneDiResidenza">
@@ -80,7 +77,11 @@
                 <p:inplace id="note">
                     <p:inputText value="#{dettaglioContatto.contatto.note}" />
                 </p:inplace>
-                        
+            </h:panelGrid>  
+            
+            <p:commandButton value="Annulla" action="listaContatti"/>
+            <p:commandButton value="Salva" action="#{dettaglioContatto.aggiornaContatto}"/>
+            
             </h:form>
 
     </h:body>

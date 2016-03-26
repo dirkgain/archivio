@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package model;
+import java.io.Serializable;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import javax.faces.bean.ManagedBean;
  */
 @ManagedBean (name="model")
 @ApplicationScoped
-public class Model {
+public class Model implements Serializable{
     
     public static boolean checkLogin (String username, String password) throws InstantiationException, IllegalAccessException{
         
@@ -157,4 +158,38 @@ public class Model {
     
 }
 
+    
+    public  boolean aggiornaContatto (Contatto contatto){
+  
+        Connection conn = null;
+       int idContatto = contatto.getId();
+        
+    try{
+         String driver = "com.mysql.jdbc.Driver";
+         Class.forName(driver).newInstance();
+         String url = "jdbc:mysql://localhost:3306/archivio_sp";
+         conn = DriverManager.getConnection(url,"root","");
+ 
+         System.out.println("Connessione stabilita");
+         Statement cmd = conn.createStatement();
+ 
+         String qry = "UPDATE contatti SET nome='"+contatto.getNome()+"' WHERE id="+idContatto;
+         cmd.executeUpdate(qry);
+    
+         
+        
+     conn.close();
+    }
+    catch (Exception e) {
+        System.out.println(e.toString()); 
+    }
+    
+         return true;
+        
+       
+    
+}
+    
+    
+    
 }

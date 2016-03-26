@@ -7,10 +7,12 @@ package bean;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import model.Contatto;
+import model.Model;
 
 /**
  *
@@ -23,7 +25,14 @@ import model.Contatto;
 public class DettaglioContattoView {
     
     Contatto contatto;
+    
+     @ManagedProperty("#{model}")
+     private Model model;
 
+      public void setModel(Model model) {
+        this.model = model;
+    }
+      
     public DettaglioContattoView() {
     }
 
@@ -36,6 +45,11 @@ public class DettaglioContattoView {
         this.contatto = contatto;
     }
     
-    
+    public String aggiornaContatto (){
+        
+        model.aggiornaContatto(contatto);
+        
+        return "listaContatti";
+    }
     
 }
